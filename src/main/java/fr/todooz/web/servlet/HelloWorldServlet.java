@@ -1,6 +1,7 @@
 package fr.todooz.web.servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -19,6 +20,10 @@ public class HelloWorldServlet extends HttpServlet {
            name = (String) request.getSession(true).getAttribute("name");
         }
 
-        response.getWriter().write("Hello " + name + " !");
+        //response.getWriter().write("Hello " + name + " !");
+        
+        PrintWriter writer = response.getWriter();
+
+        writer.write("<html><head></head><body><b>Hello</b> " + name + " !</body></html>");
     }
 }
