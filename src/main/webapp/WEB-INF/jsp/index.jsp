@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,6 +9,9 @@
 <link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+
+
+
 	<div class="container">
 		<div class="navbar navbar-inverse">
 			<div class="navbar-inner">
@@ -21,55 +26,17 @@
 		<div class="row">
 			<div class="span9">
 				<legend>All tasks</legend>
-
+<c:forEach var="task" items="${tasks}">
 				<div>
-					<p>20 juillet 2012</p>
-					<span class="lead">Read Effective Java</span> <span
-						class="badge badge-info">Java</span> <span
-						class="badge badge-info">Java</span>
-					<p>Read Effective Java before it's too late</p>
+					<p><fmt:formatDate value="${task.date}" pattern="dd MMM yyyy"/></p>
+						<span class="lead">${task.title}</span> 
+						<span class="badge badge-info">${task.tags}</span> 
+						<span class="badge badge-info">${task.tags}</span>
+					<p>${task.text}</p>
 				</div>
-
-				<div>
-					<p>20 juillet 2012</p>
-					<span class="lead">Read Effective Java</span> <span
-						class="badge badge-info">Java</span> <span
-						class="badge badge-info">Java</span>
-					<p>Read Effective Java before it's too late</p>
-				</div>
-
-				<div>
-					<p>20 juillet 2012</p>
-					<span class="lead">Read Effective Java</span> <span
-						class="badge badge-info">Java</span> <span
-						class="badge badge-info">Java</span>
-					<p>Read Effective Java before it's too late</p>
-				</div>
-
-				<div>
-					<p>20 juillet 2012</p>
-					<span class="lead">Read Effective Java</span> <span
-						class="badge badge-info">Java</span> <span
-						class="badge badge-info">Java</span>
-					<p>Read Effective Java before it's too late</p>
-				</div>
-
-				<div>
-					<p>20 juillet 2012</p>
-					<span class="lead">Read Effective Java</span> <span
-						class="badge badge-info">Java</span> <span
-						class="badge badge-info">Java</span>
-					<p>Read Effective Java before it's too late</p>
-				</div>
-
-				<div>
-					<p>20 juillet 2012</p>
-					<span class="lead">Read Effective Java</span> <span
-						class="badge badge-info">Java</span> <span
-						class="badge badge-info">Java</span>
-					<p>Read Effective Java before it's too late</p>
-				</div>
+</c:forEach>
 			</div>
+
 			<div class="span3">
 				<div>
 					<legend>Quick links</legend>
