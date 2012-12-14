@@ -13,6 +13,10 @@ public class HelloWorldServlet extends HttpServlet {
 	  @Override
 	  protected void doGet(HttpServletRequest request,
 	      HttpServletResponse response) throws ServletException, IOException {
-	    request.getRequestDispatcher("index.html").forward(request, response);
+		  
+		  request.setAttribute("name", request.getParameter("name"));
+
+		  request.getRequestDispatcher("/WEB-INF/jsp/hello.jsp").forward(request, response);
+	    
 	  }
 	}
