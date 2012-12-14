@@ -7,18 +7,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class HelloWorldServlet extends HttpServlet {
+public class HelloWorldRedirectServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
-    	String name = request.getParameter("name");
-
-        if (name == null) {
-           name = (String) request.getSession(true).getAttribute("name");
-        }
-
-        response.getWriter().write("Hello " + name + " !");
+        response.sendRedirect("HelloWorldServlet");
     }
 }
