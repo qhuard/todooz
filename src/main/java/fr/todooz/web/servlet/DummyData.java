@@ -7,7 +7,7 @@ import java.util.List;
 import fr.todooz.domain.Task;
 
 public class DummyData {
-	  private static final int TASK_COUNT = 20;
+	  private static final int TASK_COUNT = 3;
 
 	  public static List<Task> tasks() {
 	    List<Task> tasks = new ArrayList<Task>();
