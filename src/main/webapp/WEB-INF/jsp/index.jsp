@@ -20,13 +20,7 @@
 			<div class="span9">
 				<legend>All tasks</legend>
 <c:forEach var="task" items="${tasks}">
-				<div>
-					<p><fmt:formatDate value="${task.date}" pattern="dd MMM yyyy"/></p>
-						<span class="lead">${task.title}</span> 
-						<span class="badge badge-info">${task.tags}</span> 
-						<span class="badge badge-info">${task.tags}</span>
-					<p>${task.text}</p>
-				</div>
+<widget:task task="${task}"/>
 </c:forEach>
 			</div>
 
