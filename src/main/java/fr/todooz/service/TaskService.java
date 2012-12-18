@@ -2,6 +2,8 @@ package fr.todooz.service;
 
 import java.util.List;
 
+import javax.inject.Inject;
+
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -12,6 +14,7 @@ import fr.todooz.domain.Task;
 
 public class TaskService {
 	
+	@Inject
 	private SessionFactory sessionFactory;
 	
 	public void save(Task task) {
